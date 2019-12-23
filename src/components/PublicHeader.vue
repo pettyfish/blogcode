@@ -2,17 +2,17 @@
     <header>
         <div class="container">
             <div>
-                <p class="blog-name">BAIKAL</p>
+                <p class="blog-name"><router-link to="/">BAIKAL</router-link></p>
                 <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-                    <el-menu-item index="1">首页</el-menu-item>
+                    <el-menu-item index="1"><router-link to="/consider">随心而思</router-link></el-menu-item>
                     <el-submenu index="2">
                         <template slot="title">学海无涯</template>
-                        <el-menu-item index="2-1">选项1</el-menu-item>
+                        <el-menu-item index="2-1">Javascript</el-menu-item>
                         <el-menu-item index="2-2">选项2</el-menu-item>
                         <el-menu-item index="2-3">选项3</el-menu-item>
                     </el-submenu>
-                    <el-menu-item index="2">世界那么大</el-menu-item>
-                    <el-menu-item index="3">关于</el-menu-item>
+                    <el-menu-item index="2"><router-link to="/world">世界那么大</router-link></el-menu-item>
+                    <el-menu-item index="3"><router-link to="/about">关于</router-link></el-menu-item>
                 </el-menu>
             </div>
             <div>
@@ -31,7 +31,7 @@ export default {
     },
     methods: {
         handleSelect (key, keyPath) {
-            console.log(key, keyPath);
+            // console.log(key, keyPath);
         }
     }
 };
