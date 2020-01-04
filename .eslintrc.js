@@ -39,6 +39,7 @@ module.exports = {
 		'no-tabs': 'off',
 		
 		'no-trailing-spaces': 'off',
-		'no-mixed-spaces-and-tabs': 'off'
+		'no-mixed-spaces-and-tabs': 'off',
+		'no-unused-vars': 'off'
     }
 }

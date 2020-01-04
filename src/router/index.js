@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import HelloWorld from '@/components/HelloWorld.vue';
+import Mainpage from '@/components/Mainpage.vue';
 import About from '@/view/About.vue';
 import World from '@/view/World.vue';
 import Consider from '@/view/Consider.vue';
@@ -12,8 +12,8 @@ export default new Router({
 	routes: [
 		{
 			path: '/',
-			name: 'HelloWorld',
-			component: HelloWorld
+			name: 'Mainpage',
+			component: Mainpage
 		},
 		{
 			path: '/about',

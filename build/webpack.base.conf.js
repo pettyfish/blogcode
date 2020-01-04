@@ -34,7 +34,9 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
+      // @ 绝对路径
       '@': resolve('src'),
+      '@img': resolve('src/assets'),
     }
   },
   module: {
