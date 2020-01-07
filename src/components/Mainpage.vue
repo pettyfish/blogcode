@@ -6,11 +6,17 @@
 		
 		<div class="container">
 			<ul class="article-list">
-				<li v-for="list in articleArray" :key="list.id">
+				<li v-for="list in articleArray" 
+					:key="list.id" 
+					:style= "{
+						background: list.background,
+						background: `linear-gradient(to right, ${list.background}, ${list.color})` }">
 					<article>
-						{{list.title}}
-						{{list.type}}
-						{{list.date}}							
+						<h2 class="title">{{list.title}}</h2>
+						<p class="content">{{list.content | wordnumPrune}}</p>
+						<p class="more">{{list.type}}
+						{{list.date}}</p>
+											 		
 					</article>
 				</li>
 			</ul>
@@ -43,6 +49,17 @@ export default {
 				console.log(err);
 			});
 		}
+	},
+	filters: {
+		wordnumPrune(value) {
+			if (!value) {
+				return '';
+			}
+			if (value.length > 32) {
+				return value.slice(0, 32) + '……';
+			}
+			return value;
+		}
 	}
 };
 </script>
@@ -60,10 +77,12 @@ export default {
 	.article-list {
 		padding: 3.5rem 8rem;
 		li {
-			background: greenyellow;
 			margin-bottom: 2rem;
 			border-radius: .25rem;
-			text-align: center;
+			padding: 1.5rem;
+			.content {
+				padding: 1rem 0;
+			}
 		}
 		li:nth-last-child(1) {
 			margin-bottom: 0;
